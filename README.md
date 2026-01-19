@@ -4,7 +4,7 @@
 Exploratory data analysis on a synthetic insurance claims dataset to identify factors influencing claim amounts.
 
 ## Dataset
-- Source: Kaggle (Medical Insurance Claims)
+- Source: Kaggle (Medical Insurance Claims) https://www.kaggle.com/datasets/thedevastator/insurance-claim-analysis-demographic-and-health
 - Original rows/columns: 1340 rows, 11 columns
 - Target: `claim` (insurance cost)
 
