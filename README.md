@@ -1,32 +1,44 @@
 # Healthcare Insurance Claims Analysis
 
 ## Overview
-Exploratory data analysis on synthetic insurance claims data to identify factors influencing claim amounts.
+Exploratory data analysis on a synthetic insurance claims dataset to identify factors influencing claim amounts.
 
 ## Dataset
-- Source: Kaggle (insurance claims data)
-- Original rows: 1340
-- Columns: age, gender, bmi, bloodpressure, diabetic, children, smoker, region, claim
-- Cleaning steps: Filled missing age (median) and region (mode), standardized categories (lowercase/strip), converted age to int.
+- Source: Kaggle (Medical Insurance Claims)
+- Original rows/columns: 1340 rows, 11 columns
+- Target: `claim` (insurance cost)
 
-## Key Insights
-- Smokers pay ~280.6% more on average ($32,050 vs $8,421 for non-smokers)
+## Cleaning Steps
+- Dropped unnecessary ID columns (`index`, `PatientID`)
+- Filled missing values:
+  - `age` (5 missing) → median
+  - `region` (3 missing) → mode (most common value)
+- Standardized categorical columns (lowercase, stripped whitespace)
+- Converted `age` to integer
+- No duplicates found
+- Kept outliers (realistic in insurance data — e.g., high claims)
+
+## Key Findings
+- Smokers pay **~280.6% more** on average than non-smokers ($32,050 vs $8,421)
 - Average claim by gender: Male $13,920, Female $12,570
 - Average claim by region: Northeast highest (~$16,889), Northwest lowest (~$11,672)
-- BMI similar across diabetic status (~30.4–30.9)
+- BMI nearly identical across diabetic status (~30.4–30.9)
 
-## Visualizations (saved as PNGs)
-- avg_claim_by_smoker.png: Bar chart of average claim by smoker
-- claim_distribution.png: Histogram of claim amounts
-- bmi_vs_claim.png: Scatter plot of BMI vs claim, colored by smoker
+## Visualizations
+![Average Claim by Smoker](avg_claim_by_smoker.png)
+![Claim Distribution](claim_distribution.png)
+![BMI vs Claim by Smoker](bmi_vs_claim.png)
 
 ## Tools Used
-- Python, Pandas (cleaning/EDA)
+- Python 3
+- Pandas (data cleaning & EDA)
 - Matplotlib & Seaborn (visualization)
 - Jupyter Notebook in VS Code
 
-## Next Steps
-- Potential for predictive modeling (e.g., regression on claim amount)
-- Deploy as interactive dashboard (Power BI / Fabric)
+## Next Steps / Future Work
+- Predictive modeling (e.g., regression to predict claim amount)
+- Interactive dashboard in Power BI or Microsoft Fabric
+- Deploy as web app (e.g., Streamlit or Flask)
 
-Built as part of portfolio for data analyst / data engineer roles.
+Built as part of portfolio for data analyst / data engineer roles.  
+Feedback welcome!
